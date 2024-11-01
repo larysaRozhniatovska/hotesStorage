@@ -38,11 +38,14 @@ class Validators
             $errors[] = 'Special characters check failed';
         }
         if (!preg_match('/[A-Z]/', $password)) {
-            $errors[] = 'The password must contain at least one capital letter.';
+            $errors[] = 'The password must contain at least one capital letter';
         }
 
         if (!preg_match('/[a-z]/', $password)) {
-            $errors[] = 'The password must contain at least one lowercase letter.';
+            $errors[] = 'The password must contain at least one lowercase letter';
+        }
+        if (!preg_match('/[0-9]/', $password)) {
+            $errors[] = 'The password must contain at least one number';
         }
         return  $errors;
     }
